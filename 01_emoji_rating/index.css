@@ -8,8 +8,6 @@ html, body {
     padding: 10px;
     display: block;
     text-align: center;
-    margin: 20px;
-    padding: 20px;
     background: #ECF2FF;
     font-size: 30px;
     min-height: 150px;
@@ -22,7 +20,10 @@ html, body {
     color: red;
     transition: all 1s linear;
     animation: fadein 2s;
-   
+    background-image: linear-gradient(0.5turn, violet, red);
+    -webkit-background-clip: text;
+    color: transparent;
+
 
 }
 
