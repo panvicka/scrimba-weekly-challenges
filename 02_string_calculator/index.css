@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(0, 255, 42);
+  margin: 0 auto;
+  justify-content: center;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.wrapper .text-input {
+  padding: 12px 20px;
+  margin: auto 3rem;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  letter-spacing: 0.1em;
+}
+
+.container {
+  display: flex;
+  flex-direction: rows;
+  border: 1px solid rgb(0, 255, 42);
+  margin: auto 3rem;
+  transition: 0.3s;
+
+  margin-bottom: 40em;
+  justify-content: baseline;
+}
+
+.numbers {
+  margin: auto 1rem;
+  text-align: center;
+  background-color: rgb(70, 70, 209);
+  color: white;
+  padding: 0px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50% 50%;
+  transition: all 0.5s;
+  transition: opacity 600ms;
+  will-change: opacity;
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+.operation {
+  background-color: rgb(12, 12, 75);
+}
+
+.faded-out {
+  opacity: 0;
+}
+.numbers:hover {
+  opacity: 80%;
+}
