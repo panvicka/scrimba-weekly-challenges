@@ -39,12 +39,13 @@ function createDivs(tokens) {
 }
 
 function inputChanged(e) {
+  console.clear();
   container.innerHTML = "";
   const enteredValue = e.target.value;
   const enteredValueNoSpaces = enteredValue.replace(/\s/g, "");
   //console.log(enteredValueNoSpaces);
 
-  const tokens = enteredValueNoSpaces.split(/([+-])/);
+  const tokens = enteredValueNoSpaces.split(/([\\*\\/+-])/);
   //console.log(tokens);
   const tokenCopy = [...tokens];
   console.log(tokens);
@@ -70,18 +71,19 @@ function inputChanged(e) {
         case "-":
           tokenCopy.unshift(parseInt(firstNumber) - parseInt(secondNumber));
           break;
-        /*         case "*":
+        case "*":
           tokenCopy.unshift(parseInt(firstNumber) * parseInt(secondNumber));
           break;
         case "/":
           tokenCopy.unshift(parseInt(firstNumber) / parseInt(secondNumber));
-          break; */
+          break;
       }
       console.log({ tokenCopy });
       console.log({ firstNumber, operation, secondNumber });
     } else {
       endReached = 1;
-      if (!isNaN(firstNumber)) {
+      if (!isNaN(firstNumber) && firstNumber != "") {
+        console.log({ firstNumber });
         result = firstNumber;
         tokens.push("=");
         tokens.push(result);

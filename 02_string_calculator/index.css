@@ -18,8 +18,8 @@
 }
 
 .wrapper .text-input {
-  padding: 12px 20px;
-  margin: auto 3rem;
+  padding: 1rem;
+  margin: 3rem 2rem 0.7rem 2rem;
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -27,11 +27,20 @@
   letter-spacing: 0.1em;
 }
 
+.wrapper p {
+  margin: 0rem 2rem 0.7rem 2rem;
+
+  text-align: left;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7em;
+  letter-spacing: 0.1em;
+}
+
 .container {
   display: flex;
   flex-direction: rows;
-  border: 1px solid rgb(0, 255, 42);
-  margin: auto 3rem;
+  margin: 3rem 2rem 0.7rem 2rem;
   transition: 0.3s;
 
   margin-bottom: 40em;
