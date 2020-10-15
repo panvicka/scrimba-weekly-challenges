@@ -1,0 +1,202 @@
+/*
+
+PART 1:
+
+You've been ordered to improve your company's newsletter form. 
+You can design it however you want, but the manager wants the button to
+animate both on the :hover and the :active state.
+
+1. Redesign the page (e.g. colors, positions, sizing, spacing)
+2. Improve the button's hover effect
+3. Improve thee button's click effect
+
+SKILLS:
+color, background, margin, padding, border-radius, 
+CSS pseudo selectors (:active, :hover), transform
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Sansita Swashed", cursive;
+}
+
+body:not(.user-is-tabbing) button:focus,
+body:not(.user-is-tabbing) input:focus,
+body:not(.user-is-tabbing) select:focus,
+body:not(.user-is-tabbing) textarea:focus {
+  outline: none;
+}
+
+body {
+  background: linear-gradient(
+      50deg,
+      hsla(340, 100%, 55%, 1) 0%,
+      hsla(340, 100%, 55%, 0) 70%
+    ),
+    linear-gradient(
+      10deg,
+      hsla(35, 95%, 55%, 1) 100%,
+      hsla(35, 95%, 55%, 0) 70%
+    );
+}
+
+.container {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    
+    height: 100vh;  
+    flex-direction: column;
+    
+}
+
+.form {
+  background-color: rgb(230, 230, 230);
+  border-radius: 20px;
+  padding: 2em;
+  width: 500px;
+  height: 300px;
+}
+
+form {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 3em;
+  align-content: center;
+}
+
+h3 {
+  color: green;
+  margin: 0 auto;
+  color: rgba(0, 0, 0, 0.801);
+  font-size: 3rem;
+  text-align: center;
+}
+
+.enter-email {
+  font-weight: 300;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+p {
+  display: none;
+  font-size: 1.6rem;
+  margin: -6rem auto;
+  text-align: center;
+}
+
+.emp {
+  color: rgba(235, 32, 32, 0.897);
+}
+
+input {
+  border-radius: 5px;
+  width: 100%;
+  height: 50px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  padding: 0.5em;
+  background-color: rgb(230, 230, 230);
+  border-style: solid;
+  border-width: 3px;
+  border-color: rgba(0, 0, 0, 0.801);
+  transition: background-color 0.5s;
+}
+
+input:focus {
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.801);
+  color: rgb(230, 230, 230);
+  border-color: rgba(0, 0, 0, 0.801);
+
+}
+
+button {
+  display: block;
+  border-radius: 30px;
+  background: rgba(0, 0, 0, 0.801);
+  font-size: 1.5rem;
+  padding: 0.3em 1.2em;
+  margin: 1em auto 0em auto;
+  border: none;
+  color: rgb(230, 230, 230);
+  font-family: "Roboto", sans-serif;
+  transition: background-color 0.5s;
+  border: 3px solid transparent;
+  cursor: pointer;
+}
+
+button:hover {
+  background: rgb(230, 230, 230);
+  color: rgba(0, 0, 0, 0.801);
+  border: 3px solid rgba(0, 0, 0, 0.801);
+}
+
+button:active {
+  border: 3px solid rgba(0, 0, 0, 0.801);
+  font-weight: 600;
+}
+
+button:disabled {
+  background: rgb(114, 107, 107);
+  color: rgba(82, 80, 80, 0.801);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.shaking {
+  -webkit-animation: shake 0.1s ease-in-out 0.1s alternate;
+  -moz-animation: shake 0.1s ease-in-out 0.1s alternate;
+  -o-animation: shake 0.1s ease-in-out 0.1s alternate;
+  animation: shake 0.1s ease-in-out 0.1s alternate;
+
+  animation-iteration-count: 6;
+}
+
+@-webkit-keyframes shake {
+  from {
+    -webkit-transform: rotate(5deg);
+  }
+  to {
+    -webkit-transform-origin: center center;
+    -webkit-transform: rotate(-5deg);
+  }
+}
+
+@-moz-keyframes shake {
+  from {
+    -webkit-transform: rotate(5deg);
+  }
+  to {
+    -webkit-transform-origin: center center;
+    -webkit-transform: rotate(-5deg);
+  }
+}
+
+@-o-keyframes shake {
+  from {
+    -webkit-transform: rotate(5deg);
+  }
+  to {
+    -webkit-transform-origin: center center;
+    -webkit-transform: rotate(-5deg);
+  }
+}
+
+@keyframes shake {
+  from {
+    -webkit-transform: rotate(5deg);
+  }
+  to {
+    -webkit-transform-origin: center center;
+    -webkit-transform: rotate(-5deg);
+  }
+}
