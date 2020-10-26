@@ -1,6 +1,68 @@
-html, body {
-    margin: 0;
-    padding: 0;
+:root {
+--level-of-translate: translateZ(3rem);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 400px;
+
+  align-items: center;
+  border: 1px solid salmon;
+  perspective:800px;
+}
+
+.card {
+  text-align: center;
+  position: relative;
+  padding: 5em;
+  transition: transform 0.3s linear;
+  background: rgb(128, 255, 0);
+  transform-style: preserve-3d;
+ 
+}
+
+/* .container:hover .card {
+  transform: rotateX(0.5turn);
+} */
+
+.hoverAdded .card {
+    transform: rotateX(0.5turn);
+  }
+  
+
+ 
+
+.front,
+.back {
+   transform-style: preserve-3d;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding:  2em;
+  backface-visibility: hidden;
+}
+
+h1 {
+    transform: var(--level-of-translate);
+ }
+
+.back {
+    transform: rotateX(0.5turn);
+    background-color: slateblue;
 }
 
 /*
@@ -19,7 +81,6 @@ min- max- prefixes, ems and rems,
 */
 
 /* Write your code here 👇 */
-
 
 /*
 
