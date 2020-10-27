@@ -1,36 +1,97 @@
 :root {
---level-of-translate: translateZ(3rem);
+  --level-of-translate: translateZ(3rem);
 }
 
-html,
-body {
+* {
+  font-family: "Candal", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 
+
+ 
+
 body {
+  background-image: url(https://images.unsplash.com/photo-1491644386567-d98960637850?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80),
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background-size: cover;
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+  
+}
+
+header {
+  font-family: "Candal", sans-serif;
+  font-size: 5rem;
+  text-align: center;
+  color: rgb(116, 9, 9);
+  background-color: rgba(0, 0, 0, 0.596);
+  margin-top: 0rem;
+  padding: 3rem;
+}
+
+i {
+  font-size: 5rem;
+  transform-style: preserve-3d;
+  animation-duration: 1s;
+  animation-name: rotate;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  margin: 0 3rem;
+}
+
+header p i {
+  animation-name: none;
+  font-size: 2rem;
+  padding: 0;
+  margin: 0;
+}
+header p {
+  animation-name: none;
+  font-size: 2rem;
+  font-weight: 200;
+}
+header p span {
+  font-weight: 900;
+  font-size: 2.2rem;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateY(0.5turn) scale(0.9);
+   }
+
+  to {
+    transform: rotateY(1.5turn) scale(1.1);
+  }
+}
+
+.wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  width: 100vw;
+  /* height: vw; */
+  min-width: 900px;
 }
 
 .container {
   width: 400px;
 
   align-items: center;
-  border: 1px solid salmon;
-  perspective:800px;
+   perspective: 800px;
 }
 
 .card {
   text-align: center;
   position: relative;
-  padding: 5em;
-  transition: transform 0.3s linear;
-  background: rgb(128, 255, 0);
+  padding: 10em;
+  transition: transform 1s linear;
+  /* background: rgb(128, 255, 0); */
   transform-style: preserve-3d;
- 
 }
 
 /* .container:hover .card {
@@ -38,31 +99,33 @@ body {
 } */
 
 .hoverAdded .card {
-    transform: rotateX(0.5turn);
-  }
-  
-
- 
+  transform: rotateX(0.5turn);
+}
 
 .front,
 .back {
-   transform-style: preserve-3d;
+  transform-style: preserve-3d;
   position: absolute;
   bottom: 0;
   top: 0;
   left: 0;
   right: 0;
-  padding:  2em;
-  backface-visibility: hidden;
+  padding: 2em;
+  backface-visibility: visible;
+  border: 10px solid black;
+  border-radius: 10%;
+  background-color: rgb(116, 9, 9);
+  color: rgb(152, 164, 190);
 }
 
 h1 {
-    transform: var(--level-of-translate);
- }
+  transform: var(--level-of-translate);
+}
 
 .back {
-    transform: rotateX(0.5turn);
-    background-color: slateblue;
+  transform: rotateX(0.5turn);
+  background-color: rgb(116, 9, 9);
+  backface-visibility: hidden;
 }
 
 /*
