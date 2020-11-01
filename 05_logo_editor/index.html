@@ -1,17 +1,108 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="style.css">
-        <script src="index.pack.js"></script>
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <div class="logo">
-            <h1 id="text">Leep App</h1>
-        </div>   
-        <div class="button-container">
-            <button id="button-one"></button>
-            <button id="button-two"></button>
-            <button id="button-three"></button>  
+
+<head>
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        Logo Editor
+    </nav>
+    <div class="logo-container">
+
+        <div id="logo-back" class="logo">
+            <span id="logo-text" class="logo-text"></span>
         </div>
-    </body>
+    </div>
+
+    <form id="logo-desing" class="logo-design-form">
+
+        <div class="form-part">
+            <p>Background</p>
+
+            <div class="form-item">
+                <label>Radius </label> <input type="range" min="0" max="100" class="slider" id="border-radius">
+            </div>
+
+            <div class="form-item">
+                <label>Width </label> <input type="range" min="0" max="550" value="300" class="slider" id="width">
+            </div>
+
+            <div class="form-item">
+                <label>Height </label> <input type="range" min="0" max="350" value="100" class="slider" id="height">
+            </div>
+
+            <div class="form-item">
+                <label>Colro</label> <input type="color" id="background-color">
+            </div>
+
+
+        </div>
+
+        <div class="form-part">
+            <p>Shadow</p>
+
+            <div class="form-item">
+                <label>Active </label> <input type="checkbox"  id="shadow-active">
+            </div>
+
+            <div class="form-item">
+                <label>X Offset </label> <input type="range" min="-100" max="100" class="slider" id="x-offset">
+            </div>
+
+            <div class="form-item">
+                <label>Y Offset </label> <input type="range" min="-100" max="100" class="slider" id="y-offset">
+            </div>
+
+            <div class="form-item">
+                <label>Blur </label> <input type="range" min="0" max="100" class="slider" id="blur">
+            </div>
+
+            <div class="form-item">
+                <label>Spread </label> <input type="range" min="0" max="100" class="slider" id="spread">
+            </div>
+
+            <div class="form-item">
+                <label>Color</label> <input type="color" id="shadow-color">
+            </div>
+
+        </div>
+
+
+        <div class="form-part">
+            <p>Text</p>
+
+
+            <div class="form-item">
+                <label>Text</label> <input type="text" id="logo-text-input">
+            </div>
+
+            <div class="form-item">
+                <label>Color</label> <input type="color" id="text-color">
+            </div>
+
+            <div class="form-item">
+                <label>size </label> <input type="range" min="0" max="60" class="slider" id="text-size">
+            </div>
+        </div>
+
+
+
+        </div>
+
+        </div>
+
+
+    </form>
+
+
+
+
+    <script type="module" src="index.js"></script>
+
+</body>
+
 </html>

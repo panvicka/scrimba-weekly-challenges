@@ -1,51 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    background-color: #F1F2F6;
-    display: flex;
-    flex-direction: column;
+  background-color: #f1f2f6;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-container {
+  margin: 0 auto;
+  height: 400px;
+  width: 60%;
+  min-width: 700px;
+  /* border: 1px dashed black; */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.575);
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Nunito", sans-serif;
 }
 
 .logo {
-    width: 300px;
-    height: 50px;
-    background-color: #FF8600;
-    border-radius: 100px;
-    margin: 60px;
-    display: flex;
+  padding: 12px;
+  display: inline;
+  font-family: "Nunito", sans-serif;
+  user-select: none;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-design-form {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  justify-content: space-between;
+  width: 60%;
+  
+  font-family: "Roboto", sans-serif;
+  padding-top: 3em;
+  gap: 2em;
+}
+
+nav {
+  color: grey;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  margin: 1em;
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+.form-part {
+  display: flex;
+  justify-content: flex-start;
+
+  max-width: 290px;
+  min-width: 200px;
+  align-items: center;
+
+  flex-direction: column;
+  background-color: rgba(156, 156, 156, 0.288);
+  border-radius: 30px;
+  padding: 0.5em 1.3em 1.3em 1.3em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.575);
+}
+
+@media only screen and (max-width: 1000px) {
+ 
+    .logo-design-form  {
     flex-direction: column;
-    padding: 40px;
+    min-width: 60%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form-part {
+    min-width: 650px;
+    justify-content: space-evenly;
+    align-items: center;
+  }
 }
 
-#text {
-    margin-top: 20px;
-    color: #F1F2F6;
-    font-family: 'Nunito', sans-serif;
-    font-size: 65px;
-    align-self: center;
-    line-height: 0;
+label {
+  margin: 0.3em;
 }
 
-.button-container {
-    width: 300px;
-    margin-left: 210px;
+.form-part p {
+  text-align: center;
+  font-weight: 500;
+  margin-top: 1em;
+  margin-bottom: 2em;
 }
 
-#button-one {
-    background-color: black;
-    height: 10px;
-    width: 20px;
-    border-radius: 5px;
+label {
+  float: left;
+  clear: left;
+  width: 80px;
+  text-align: left;
 }
-
-#button-two {
-    background-color: red;
-    height: 10px;
-    width: 20px;
-    border-radius: 5px;
-}
-
-#button-three {
-    background-color: white;
-    height: 10px;
-    width: 20px;
-    border-radius: 5px;
+input {
+  float: left;
+  width: 100px;
 }
