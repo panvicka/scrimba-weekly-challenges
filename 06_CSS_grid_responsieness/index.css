@@ -151,4 +151,18 @@ a {
   flex-grow: 1;
 }
 
- 
+.far, .fas {
+  transition: color 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+ .fa-newspaper:hover {
+  color: rgba(0, 0, 255, 0.452);
+ }
+
+ .fa-globe-europe:hover {
+  color: rgba(212, 0, 255, 0.479);
+ }
+
+ .fa-info:hover {
+  color: rgba(19, 177, 32, 0.479);
+ }
