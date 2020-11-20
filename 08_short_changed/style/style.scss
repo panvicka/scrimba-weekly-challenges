@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-height: 100vh;
+ 
+}
+
+header {
+    text-align: center;
+    padding: 1em;
+    font-size: 2rem;
+    font-weight: bolder;
+    img {         
+        width: 2rem;
+    }
+}
+footer {
+    padding: 4em;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    border: 1px solid blue;
+    flex-grow: 1;
+    min-width: 70%;
+    max-width: 80%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.part {
+    border: 1px solid rgb(0, 255, 115);
+    margin: 0.5em;
+}
+
+.part-money {
+
+    
+
+
+}
+
+img {
+    width: 20px;
+}
