@@ -64,6 +64,9 @@ function handleTileClick(e) {
             }, timeDelay * 100);
         }
     });
+    if (clickedCol === clickedRow) {
+        allColsDivs[clickedCol].style.backgroundColor = getDivInvertedColor(allColsDivs[clickedCol]);
+    }
 }
 function generateDivs(div) {
     var randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
