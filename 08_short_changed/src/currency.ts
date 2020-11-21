@@ -6,7 +6,12 @@ type Coin = {
 };
 
 export class Currency {
+  private _total: number = 0;
   constructor(private symbol: string, private coins: Coin[]) {}
+
+  get total() {
+    return this._total;
+  }
 
   printCoins() {
     this.coins.forEach((coin) => {
@@ -16,7 +21,7 @@ export class Currency {
 
   randomizeCoins() {
     this.coins.forEach((coin) => {
-      coin.value = Math.round(Math.random() * 15 + 1);
+      coin.amount = Math.round(Math.random() * 6 + 1);
     });
   }
 
@@ -27,35 +32,33 @@ export class Currency {
 
     this.coins.forEach((coin) => {
       newFormContainer.innerHTML += `<label>${coin.name}</label>
-        <input type="number" id="${coin.id}" min="0" max="10000" value="${coin.value}"><br>`;
-
-      document
-        .querySelector(`#${coin.id}`)
-        ?.addEventListener("change", this.calculateTotal.bind(this));
+        <input type="number" id="${coin.id}" min="0" max="10000" value="${coin.amount}"><br>`;
     });
     div.appendChild(newFormContainer);
-    this.calculateTotal();
+    // document.querySelectorAll("input").forEach((input) => {
+    //   input.addEventListener("change", this.calculateTotal.bind(this));
+    // });
+
+    this._total = this.calculateTotal();
   }
 
   calculateTotal(this: Currency): number {
-    console.log("triggered");
 
-    let total = 0;
+    let runningTotal = 0;
 
     this.coins.forEach((coin, i) => {
-      //this.printCoins();
       const input = <HTMLInputElement>document.querySelector(`#${coin.id}`);
       coin.amount = parseInt(input.value);
-      total += coin.amount * coin.value;
+      runningTotal += coin.amount * coin.value;
     });
 
-    console.log(total);
+    console.log(this.coins);
     const totalField = document.querySelector<HTMLSpanElement>(".total-field");
     if (totalField) {
-      totalField.innerHTML = `${total} ${this.symbol} `;
+      totalField.innerHTML = `${runningTotal} ${this.symbol} `;
     }
 
-    return total;
+    return runningTotal;
   }
 }
 
