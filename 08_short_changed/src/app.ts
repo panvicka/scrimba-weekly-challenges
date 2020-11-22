@@ -39,6 +39,7 @@ window.addEventListener("load", () => {
     currencyAktiv.generateForm(coinsForm);
   }
   comparePrices();
+  switchCurrency();
 });
 
 function switchCurrency() {
