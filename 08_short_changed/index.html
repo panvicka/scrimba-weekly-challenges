@@ -5,48 +5,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/style.css">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <title>Short change</title>
 
 </head>
 
 <body>
 
     <header>
-        <img id="icon-coins" src="" />
-        Short change
-        
-        <nav>
-            <button class="currency">CZK</button>
-            <button class="currency">€</button>
-        </nav>
+        <div>
+            <img id="icon-coins" src="" />
+            Short change
+        </div>
+        <div>
+
+            <button class="currency currency-czk">CZK</button>
+            <button class="currency currency-euro">€</button>
+        </div>
     </header>
 
     <div class="container">
-        <div class="part part-money"> 
+        <div class="part part-money">
             <img id="icon-wallet" src="" />
-           
-            
+
+
             <div class="coins-form">
 
             </div>
             <span class="total-field"></span>
-            
-            <button class="find-wallet">Try to find a new wallet</button>
+
         </div>
 
- 
+
         <div class="part part-product">
             <span class="can-you-buy"></span>
             <span class="product-name"></span><span> for</span>
             <span class="product-price"></span>
 
-            
-
-            <button class="find-product">...maybe find something new?</button>
 
 
 
 
+
+
+        </div>
+
+        <div class="part part-buttons">
+            <button class="find-wallet">Try to find a new wallet...</button>
+            <button class="find-product">...or something new to buy!</button>
         </div>
 
 
@@ -54,10 +62,14 @@
 
 
     <footer>
-        <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from
-            <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-        <div>Icons made by <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a>
-            from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+        <p>Part of Scrimba <a href="https://scrimba.com/scrim/co20d464e9fcad30b0d8781c3">Weekly Challenges</a></p>
+        Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> and <a
+            href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a> from
+        <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+
+        <p>Check my <a href="https://github.com/panvicka/scrimba-weekly-challenges">GIT Repo <i
+                    class="fab fa-github"></i></a> and follow me on <a href="https://twitter.com/panvicka"><i
+                    class="fab fa-twitter"></i>Twitter</a></p>
 
     </footer>
     <script src="dist/app.js"></script>

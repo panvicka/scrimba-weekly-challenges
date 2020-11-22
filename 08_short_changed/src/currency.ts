@@ -7,10 +7,14 @@ type Coin = {
 
 export class Currency {
   private _total: number = 0;
-  constructor(private symbol: string, private coins: Coin[]) {}
+  constructor(private _symbol: string, private coins: Coin[]) {}
 
   get total() {
     return this._total;
+  }
+
+  get symbol() {
+    return this._symbol;
   }
 
   printCoins() {
@@ -31,8 +35,8 @@ export class Currency {
     let newFormContainer = document.createElement("div");
 
     this.coins.forEach((coin) => {
-      newFormContainer.innerHTML += `<label>${coin.name}</label>
-        <input type="number" id="${coin.id}" min="0" max="10000" value="${coin.amount}"><br>`;
+      newFormContainer.innerHTML += `
+        <input type="number" id="${coin.id}" min="0" max="10000" value="${coin.amount}"><label>${coin.name}</label><br>`;
     });
     div.appendChild(newFormContainer);
     // document.querySelectorAll("input").forEach((input) => {
@@ -53,6 +57,8 @@ export class Currency {
     });
 
     console.log(this.coins);
+    //round to 2 decimal places
+    runningTotal = Math.round(runningTotal * 100) / 100;
     const totalField = document.querySelector<HTMLSpanElement>(".total-field");
     if (totalField) {
       totalField.innerHTML = `${runningTotal} ${this.symbol} `;

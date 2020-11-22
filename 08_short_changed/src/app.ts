@@ -1,4 +1,6 @@
+import { Currency } from "./currency";
 import { czechCrows } from "./czk";
+import { euros } from "./euro";
 import { addIconsPaths } from "./icons_svg";
 
 import faker from "faker";
@@ -8,14 +10,19 @@ const walletButton = document.querySelector<HTMLButtonElement>(".find-wallet")!;
 const productButton = document.querySelector<HTMLButtonElement>(
   ".find-product"
 )!;
+const euroButton = document.querySelector<HTMLButtonElement>(".currency-euro")!;
+const czkButton = document.querySelector<HTMLButtonElement>(".currency-czk")!;
 
 let currentProductPrice: number;
+let currencyAktiv: Currency = czechCrows;
 
 coinsForm.addEventListener("change", comparePrices);
+euroButton.addEventListener("click", switchCurrency);
+czkButton.addEventListener("click", switchCurrency);
 
 walletButton.addEventListener("click", () => {
   if (coinsForm) {
-    czechCrows.generateForm(coinsForm);
+    currencyAktiv.generateForm(coinsForm);
     comparePrices();
   }
 });
@@ -29,20 +36,37 @@ window.addEventListener("load", () => {
   addIconsPaths();
   renderRandomProduct();
   if (coinsForm) {
-    czechCrows.generateForm(coinsForm);
+    currencyAktiv.generateForm(coinsForm);
   }
   comparePrices();
 });
 
+function switchCurrency() {
+  if (currencyAktiv === czechCrows) {
+    currencyAktiv = euros;
+    euroButton.classList.add("activated");
+    czkButton.classList.remove("activated");
+  } else {
+    currencyAktiv = czechCrows;
+    czkButton.classList.add("activated");
+    euroButton.classList.remove("activated");
+  }
+  if (coinsForm) {
+    currencyAktiv.generateForm(coinsForm);
+  }
+  comparePrices();
+  renderRandomProduct();
+}
+
 function comparePrices() {
-  const totalInWallet = czechCrows.calculateTotal();
+  const totalInWallet = currencyAktiv.calculateTotal();
   const productNameSpan = document.querySelector<HTMLSpanElement>(
     ".can-you-buy"
   )!;
   if (currentProductPrice <= totalInWallet) {
-    productNameSpan.innerText = "you can buy";
+    productNameSpan.innerText = "You can buy";
   } else {
-    productNameSpan.innerText = "you can't buy";
+    productNameSpan.innerText = "You can't buy";
   }
 }
 
@@ -54,10 +78,16 @@ function renderRandomProduct() {
     ".product-price"
   )!;
 
-  productNameSpan.innerText = `${faker.commerce.productAdjective()}   ${faker.commerce
-    .product()
-    .toLowerCase()}`;
-  productPriceSpan.innerText = faker.commerce.price();
+  productNameSpan.innerText = `${faker.commerce
+    .productAdjective()
+    .toLowerCase()}   ${faker.commerce.product().toLowerCase()}`;
 
-  currentProductPrice = parseInt(productPriceSpan.innerText);
+  let price = faker.commerce.price();
+  console.log(price);
+  
+  price = price.substring(0, price.length-3);
+  console.log(price);
+  productPriceSpan.innerText = `${price} ${currencyAktiv.symbol}`;
+
+  currentProductPrice = parseInt(price);
 }
