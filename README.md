@@ -16,5 +16,5 @@ So here are my solutions!
 ### Week 7: Magic squares
 [![Netlify Status](https://api.netlify.com/api/v1/badges/37e46a25-b140-483d-88a3-4cd14af8d531/deploy-status)](https://vigorous-blackwell-168b39.netlify.app/)
 
-### Week 7: Short Changed
+### Week 8: Short Changed
 [![Netlify Status](https://api.netlify.com/api/v1/badges/2b5712ca-2fd9-4a2b-a345-134495e8dbdc/deploy-status)](https://flamboyant-allen-2baf60.netlify.app/)
