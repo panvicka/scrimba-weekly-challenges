@@ -1,0 +1,110 @@
+$clockColor: #a59e9e;
+ 
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  height: 100vh;
+  box-sizing: border-box;
+  background-color: rgb(176, 176, 182);
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+h3 {
+  text-align: center;
+  margin: 0.5em;
+}
+
+#container {
+  margin: 0em auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  height: 100vh;
+  min-height: 600px;
+  max-width: 1000px;
+  min-width: 800px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.sidebar {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+ 
+
+  a {   
+    
+    margin: 0.4em;
+    font-size: 2rem;
+    transition: all 0.3s linear;
+    opacity: 70%;
+  }
+  a:hover {
+    opacity: 100%;
+  }
+}
+
+.clock {
+  background: $clockColor;
+  width: 20vmin;
+  height: 20vmin;
+  border-radius: 50%;
+  position: relative;
+}
+
+.dot {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 5%;
+  height: 5%;
+  background: darken($clockColor, 8);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.hour {
+  position: absolute;
+  margin: auto;
+  left: 49%;
+  bottom: 50%;
+  background: darken($clockColor, 30);
+  width: 2%;
+  height: 40%;
+  transform: rotate(0);
+  transform-origin: 50% 100%;
+}
+
+.minute {
+  @extend .hour;
+  transform: rotate(0);
+  height: 48%;
+  background: darken($clockColor, 20);
+}
+
+.second {
+  @extend .hour;
+  background: lighten($clockColor, 10);
+  width: 1%;
+  left: 49.5%;
+  transform: rotate(0);
+  height: 48%;
+}
